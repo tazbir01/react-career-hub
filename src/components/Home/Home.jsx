@@ -5,7 +5,7 @@ import JobCategory from "../JobCategory/JobCategory";
 
 const Home = () => {
     return (
-        <div>
+        <div className="max-w-5xl mx-auto">
             <Banner></Banner>
             <JobCategory></JobCategory>
             <FeaturedJobs></FeaturedJobs>
