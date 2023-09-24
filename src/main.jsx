@@ -12,6 +12,7 @@ import Statistics from './components/Statistics/Statistics';
 import AppliedJobs from './components/AppliedJobs/AppliedJobs';
 import Blog from './components/Blog/Blog';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import JobDetails from './components/JobDetails/JobDetails';
 
 const router = createBrowserRouter([
   {
@@ -29,11 +30,18 @@ const router = createBrowserRouter([
       },
       {
         path:'/applied',
-        element: <AppliedJobs></AppliedJobs>
+        element: <AppliedJobs></AppliedJobs>,
+        loader: () => fetch('../public/data/jobs.json')
       },
       {
         path:'/blog',
         element: <Blog></Blog>
+      },
+      {
+        path:'/job/:id',
+        element: <JobDetails></JobDetails>,
+        // eivabe data load kora ushit na
+        loader: ()=> fetch('../public/data/jobs.json')
       }
     ]
   },

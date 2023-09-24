@@ -1,9 +1,10 @@
 import { GrLocation } from "react-icons/gr";
 import { AiOutlineDollarCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const FeaturedJob = ({ job }) => {
     console.log(job)
-    const { logo, company_name, job_title, location, salary, remote_or_onsite, job_type } = job
+    const { id, logo, company_name, job_title, location, salary, remote_or_onsite, job_type } = job
     return (
         <div className="border p-6">
             <img src={logo} alt="" />
@@ -18,7 +19,9 @@ const FeaturedJob = ({ job }) => {
                 <p className=" flex items-center gap-1"><AiOutlineDollarCircle></AiOutlineDollarCircle>{salary}</p>
             </div>
             <div className="mt-6">
-                <button className="bg-[#9873FF] text-white font-semibold px-4 py-2 rounded-lg">View Details</button>
+                <Link to={`/job/${id}`}>
+                    <button className="bg-[#9873FF] text-white font-semibold px-4 py-2 rounded-lg">View Details</button>
+                </Link>
             </div>
         </div>
     );
